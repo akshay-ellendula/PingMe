@@ -97,7 +97,7 @@ function ChatPage() {
     <div className="h-[93vh]" data-theme={"dark"}>
       <Chat client={chatClient}>
         <Channel channel={channel}>
-          <div className="w-full relative">
+          <div className="w-full relative ml-0 pl-0 mr-auto">
             <CallButton handleVideoCall={handleVideoCall} />
             <Window>
               <ChannelHeader />
