@@ -29,9 +29,6 @@ app.use('/api/chat', chatRoutes);
 
 if (process.env.NODE_ENV === "production") {
   const distPath = path.join(__dirname, "..", "..", "frontend", "dist");
-
-
-  console.log(distPath)
   const indexPath = path.join(distPath, "index.html");
   app.use(express.static(distPath));
   app.use((req, res, next) => {

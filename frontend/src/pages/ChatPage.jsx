@@ -31,22 +31,14 @@ function ChatPage() {
     queryFn: getStreamTokenApi,
     enabled: !!authUser // this is used to run only when authUser is available
   })
-  console.log("authUser", authUser);
-  console.log("tokenData", tokenData);
-  console.log("STREAM_API_KEY", STREAM_API_KEY);
-
-  console.log("Outside useEffect", { authUser, tokenData, targetUserId });
 
   useEffect(() => {
     const initChat = async () => {
       if (!tokenData?.streamToken || !authUser) {
-        console.log("Missing token or authUser — skipping init");
         return;
       }
 
       try {
-        console.log("Starting Stream init");
-
         const client = StreamChat.getInstance(STREAM_API_KEY);
 
         await client.connectUser(

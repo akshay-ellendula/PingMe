@@ -120,8 +120,6 @@ export const onBoarding = asyncHandler(async (req, res) => {
         new: true
     })
     if (!updatedUser) return res.status(404).json({ message: "User not found" });
-    console.log(updatedUser)
-
     try {
         await addStreamUser({
             id: updatedUser._id.toString(),

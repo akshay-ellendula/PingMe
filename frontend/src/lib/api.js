@@ -58,6 +58,5 @@ export const acceptRequestApi = async (requestId) => {
 
 export const getStreamTokenApi = async() =>{
     const response = await axiosInstance.get('/chat/token');
-    console.log(response.data)
     return response.data;
 }
