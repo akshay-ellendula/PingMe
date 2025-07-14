@@ -12,8 +12,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config();
-const app = express();
+dotenv.config(); // for getting data from dotenv
+const app = express(); 
 const PORT = process.env.PORT;
 
 app.use(express.json());

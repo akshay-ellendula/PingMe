@@ -56,7 +56,6 @@ export const signup = asyncHandler(async (req, res) => {
 
     res.status(201).json({ success: true })
 
-
 })
 
 //@dec auth sigin
@@ -68,19 +67,15 @@ export const signin = asyncHandler(async (req, res) => {
     if (!email || !password) {
         res.status(400).json({ message: 'All fileds are Required' })
     }
-
     const user = await User.findOne({ email });
     if (!user) {
         return res.status(400).json({ message: `${email} is not registered` })
     }
-
     const isPasswordCorrect = await user.matchPassword(password)
     if (!isPasswordCorrect) {
         return res.status(401).json({ message: `incorrect Password` })
     }
-
-
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_KEY, {
+       const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_KEY, {
         expiresIn: '1h'
     })
 
@@ -126,7 +121,6 @@ export const onBoarding = asyncHandler(async (req, res) => {
             name: updatedUser.fullName,
             image: updatedUser.profilePic || "",
         });
-        console.log(`Stream user updated after onboarding for ${updatedUser.fullName}`);
     } catch (streamError) {
         console.log("Error updating Stream user during onboarding:", streamError.message);
     }
