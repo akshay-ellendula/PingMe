@@ -4,7 +4,7 @@ PingMe is a modern real-time chat and collaboration app built with cutting-edge 
 
 ## 🚀 Live Demo
 
-🟢 [PingMe - Live Demo](https://pingme-7llm.onrender.com)
+🟢 [PingMe - Live Demo](https://pingme-34no.onrender.com/)
 
 ## 🛠 Tech Stack
 
